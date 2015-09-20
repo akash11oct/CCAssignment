@@ -1,3 +1,3 @@
 # CCAssignment
-Author : Akash Gandotra
+Author : Akash Gandotra <br>
 Email  : agandotr@andrew.cmu.edu
