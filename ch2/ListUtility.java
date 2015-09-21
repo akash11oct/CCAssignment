@@ -1,7 +1,6 @@
 package practice.CCAssignment.ch2;
 
 /**
- *
  * @author Akash Gandotra
  */
 public class ListUtility {
