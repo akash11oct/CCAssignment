@@ -6,7 +6,7 @@ import java.util.Arrays;
  *
  * @author Akash Gandotra
  */
-public class IsUnique {
+public class Solution01 {
     
     /**
      * Check if string has unique characters
@@ -66,7 +66,7 @@ public class IsUnique {
     }
     
     public static void main(String args[]){
-        IsUnique obj = new IsUnique();
+        Solution01 obj = new Solution01();
         System.out.println(obj.isStringUnique("abcde"));
         System.out.println(obj.isStringUniqueWithoutAdditionalDS("abcde"));
         System.out.println(obj.isStringUnique("abcdea"));
