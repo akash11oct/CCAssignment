@@ -66,5 +66,13 @@ public class TreesNGraphsUtility {
             node.state = State.Unvisited;
         }
     }
+
+    public static void inorder(MyTreeNode n) {
+        if (n != null) {
+            inorder(n.getLeft());
+            System.out.print(n.getData() + " ");
+            inorder(n.getRight());
+        }
+    }
     
 }
