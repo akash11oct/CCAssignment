@@ -15,6 +15,10 @@ public class Solution10 {
      * This method recursively tests this by checking to see if t2 is not 
      * identical to t1, then if t2 is a subtree of either of the subtrees of t1.
      * 
+     * Time Complexity  : O(log n + log m) 
+     * Space Complexity : worst case of O(nm); far more optimal on average.
+     * where n and m are the number of nodes in t1 and t2.
+     * 
      * @param t1 the larger tree
      * @param t2 the smaller tree 
      * @return true if tree t2 is a subtree of tree t1
