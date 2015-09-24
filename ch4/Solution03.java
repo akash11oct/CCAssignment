@@ -129,6 +129,15 @@ public class Solution03 {
         System.out.println("Printing Lists of Depths:");
         obj.createListOfDepths();
         obj.printListOfDepths();
+        /*
+        * Printing Tree in Level Order:
+        * 1 2 3 4 5 6 7 8 9 
+        * Printing Lists of Depths:
+        * 1 
+        * 2 3 
+        * 4 5 6 
+        * 7 8 9 
+        */
     }
 
 }
