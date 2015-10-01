@@ -3,8 +3,8 @@ package practice.CCAssignment.ch10;
 import java.util.Arrays;
 
 /**
- * This class implements an algorithm to merge a sorted array into class's
- * sorted array. The class's sorted array is big enough to accommodate the
+ * This class implements an algorithm to merge a sorted array into another
+ * sorted array. The bigger sorted array is big enough to accommodate the
  * other array.
  * 
  * @author Akash Gandotra

@@ -26,6 +26,8 @@ class AnagramGroup {
      * for a map that stores all strings that are anagrams of this key string
      * in a list.
      * Finally, we rebuild the array from this map of lists of strings.
+     * 
+     * Time Complexity : O(n log n)
      */
     private void groupAnagrams() {
         HashMap<String, LinkedList<String>> map = new HashMap<String, LinkedList<String>>();
@@ -67,5 +69,14 @@ public class Solution02 {
         String[] strArr = new String[]{"iceman", "cbda", "cinema", "abcd", "hello", "mainec", "bcda"};
         AnagramGroup obj = new AnagramGroup(strArr);
         obj.printAnagramGroup();
+        /**
+         *  hello
+            mainec
+            cinema
+            iceman
+            bcda
+            abcd
+            cbda
+         */
     }
 }
