@@ -12,6 +12,8 @@ public class Solution07 {
     }
 
     public static void main(String[] args) {
-        System.out.println(swapOddEvenBits(538)); //293
+        System.out.println(swapOddEvenBits(1000));
+        System.out.println(Integer.toBinaryString(1000));
+        System.out.println(Integer.toBinaryString(swapOddEvenBits(1000)));
     }
 }
