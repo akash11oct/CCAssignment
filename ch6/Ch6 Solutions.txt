@@ -108,8 +108,174 @@ which means
 
 6.5 Jugs of Water:
 You have a five-quart jug, a three-quart jug, and an unlimited supply of water (but no measuring cups). How would 
-you come up with exactly for quarts of water? Note that the jugs are oddly shaped, such that filling up exactly 
+you come up with exactly four quarts of water? Note that the jugs are oddly shaped, such that filling up exactly 
 "half" of the jug would be impossible. 
 
 ---------------------------------------------------
 Solution:
+
+This is a simple 4-step process.
+Let's call the three-quart jug J3
+       and the five-quart  jug J5
+
+Steps:
+1. Fill J3 completely(3-quarts) and transfer the water to J5.
+    
+    End Result - J5 has 3 quarts, J3 is empty
+
+2. Fill J3 and transfer the water to J5 to the point when J5 is full 
+    
+    End Result - J5 has 5 quarts, J3 is left with 1 quart
+
+3. Empty J5 and transfer water from J3 to J5.
+    
+    End Result - J5 has 1 quart, J3 is empty
+
+4. Fill J3 completely(3-quarts) and transfer the water to J5
+    
+    End Result - J5 has 4 quarts, J3 is empty
+
+So, now we have the five-quart with 4 quarts of water.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.6 Blue-Eyed Island:
+A bunch of people are living on an island, when a visitor comes with a strange order: all blue-eyed people 
+must leave the island as soon as possible. There will be a flight out at 8:00 p.m. every evening. Each person 
+can see everyone else's eye color, but they do not know their own (nor is anyone allowed to tell them). 
+Additionally, they do not know how many people have blue eyes, although they do know that at least one 
+person does. How many days will it take the blue-eyed people to leave? 
+
+---------------------------------------------------
+Solution:
+
+Case 1. Let's assume that there is only one man with blue eyes. 
+
+If that man found out that there is no one else with blue eyes, he would leave the same night.
+
+Case 2. Now, let's assume there are two men with blue eyes. 
+
+If the blue-eyed men saw each other, they know there is at one other man with blue eyes. 
+As per the first case, they know the other blue-eyed man would have left the first night if he was
+the only one. So, if the other blue-eyed man is still there on the second night, then they must have 
+blue eyes as well. So they would both leave on the second night.
+
+Case 3. Now, let's assume there are N number of men with blue eyes. 
+
+By the same logic as applied in last case, if there were 3 men with blue eyes, they would know
+that if there were only 2 men, they would have left on second night. Knowing that they were there on
+the third night would mean that they had blue eyes themselves, and the three men would leave on the 
+third night. Similarly, with N number of men with blue eyes, it would take N nights for all men
+with blue eyes to leave.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.7 The Apocalypse:
+In the new post-apocalyptic world, the world queen is desperately concerned about the birth rate. Therefore, 
+she decrees that all families should ensure that they have one girl or else they face massive fines. If 
+all families abide by this policy - that is, they have continue to have children until they have one girl,
+at which point they immediately stop - what will the gender ratio of the new generation be? 
+(Assume that the odds of someone having a boy or a girl on any given pregnancy is equal.) 
+Solve this out logically and then write a computer simulation of it. 
+
+---------------------------------------------------
+Solution:
+
+Since the probability of next boy or girl is always same and equal to 50%, when
+we consider the entire population as a whole, all we care about is the addition of
+a girl or boy to the population.
+Therefore, if we look at the entire population as a whole, the gender ratio will
+be close to 50% even after this policy.
+
+This can be tested with a simple simulation:
+
+
+    public static void runGenderRatioSimulation() {
+        int totalGirls = 0;
+        int totalBoys = 0;
+        int total = 0;
+
+        Random r = new Random();
+
+        for (int numRuns = 1; numRuns < 99999; numRuns++) {
+            int boys = 0;
+            int girls = 0;
+
+            while (girls == 0) {
+                if (r.nextBoolean()) {
+                    boys++;
+                } else {
+                    girls++;
+                }
+            }
+            totalBoys += boys;
+            totalGirls += girls;
+        }
+
+        total = totalBoys + totalGirls;
+        double percentageBoys = (double) totalBoys / total;
+
+        System.out.println(percentageBoys); //0.5000274990375337
+    }
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.8 The Egg Drop Problem:
+There is a building of 100 floors. If an egg drops from the Nth floor or above, it will break. 
+If it's dropped from any floor below, it will not break. You're given two eggs. 
+Find N, while minimizing the number of drops for the worst case.
+---------------------------------------------------
+Solution:
+
+We'll use the first egg to get a range of possible floors that contain the highest floor an egg can be dropped 
+from without breaking. To do this, we'll drop it from increasingly higher floors until it breaks, 
+skipping some number of floors each time.
+
+When the first egg breaks, we'll use the second egg to find the exact highest floor an egg can be dropped from. 
+We only have to drop the second egg starting from the last floor where the first egg didn't break, up 
+to the floor where the first egg did break. But we have to drop the second egg one floor at a time.
+
+When we're choosing how many floors to skip the first time we drop the first egg, we know:
+We set up the following equation where n is the number of floors we skip the first time:
+
+n + (n-1) + (n-2) + .. + 1 = 100n+(n−1)+(n−2)+…+1=100
+This triangular series reduces to n * (n+1) / 2 = 100n(n+1)/2=100 
+which solves to give n = 13.651n=13.651. 
+
+We round up to 14 to be safe. 
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.9 100 Lockers:
+There are 100 closed lockers in a hallway. A man begins by opening all 100 lockers. 
+Next, he closes every second locker. Then on his third pass, he toggles every third locker 
+(closes it if it is open or opens it if it is closed). This process continues for 100 passes, 
+such that on each pass i, the man toggles every ith locker. After 100th pass in the 
+hallway, in which he toggles only locker #100, how many lockers are open?
+---------------------------------------------------
+Solution:
+
+The final status of door depends on the number of toggles of a door. 
+If a door is toggled odd times, it will end up open. 
+If a door is toggled even times, it will end up closed.
+
+So for each door, we notice
+door 1 will be toggled once therefore it will end up open.
+door 2 will be toggled in pass 1 and 2 and ends up closed.
+door 3 is toggled in pass 1 and 3 and ends up closed.
+door 4 is toggled 3 times in pass 1, 2, 4 and ends up open. 
+and this goes until 
+
+door 100 is toggled 9 times in pass 1, 2, 4, 5, 10, 20, 25, 50 and 100 and ends up open.
+
+Thus we see that we need to find the numbers that have odd number of factors between 1 and itself.
+We see that the numbers : 1, 4, 9, 16, 25, 36, 49, 64, 81 and 100 are like this since they are perfect squares.
+
+Hence, 10 lockers are open at the end.
