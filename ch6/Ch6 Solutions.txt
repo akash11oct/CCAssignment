@@ -2,6 +2,7 @@
 You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills of weight 1.1 gram. 
 Given a scale that provides an exact measurement, how would you find the heavy bottle? you can only use the scale once.
 
+---------------------------------------------------
 Solution:
 
 Here, we can use the scale just once. Since, one of the bottles has pills that are heavier than others, 
@@ -16,12 +17,16 @@ the contribution of weight to total weight.
 210 + 20 pills * 0.1 gram extra weight per pill = 212
 5. So, to identify the bottle with heavier pills, we use the formula : (weight - 210) / 0.1
 
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
 6.2 Basketball:
 You have a basketball hoop and someone says that you can play one of two games.
 Game 1: You get one shot to make the hoop.
 Game 2: You get three shots and you have to make two of three shots, If p is the probability of 
 making a particular shot, for which values of p should you pick one game or the other? 
 
+---------------------------------------------------
 Solution:
 Let p be the probability of making a shot. probabilities of winning the games are
 The probability for winning :
@@ -46,3 +51,65 @@ if probability of making a shot is more than 50%,
 
 if probability of making a shot is 50%, 
     we can play either of the two Games
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.3 Dominos:
+There is an 8*8 chessboard in which two diagonally opposite corners have been cut off. you are given 
+31 dominos, and a single domino can cover exactly two squares. Can you use the 31 dominos to cover 
+the entire board? Prove your answer (by providing an example or showing why it's impossible).
+
+---------------------------------------------------
+Solution:
+
+No, we cannot use the 31 dominos to cover the entire board.
+
+We know that the chess board has 32 squares each of white and black colors.
+Also, the diagonally opposite squares are always the same color.
+
+This means when we cut off two diagonally opposite squares, we are left with either 30 white
+and 32 black or 32 white and 30 black squares.
+Since each domino covers two adjacent squares and adjacent squares always have different colors, we 
+can say each domino will cover exactly one black and one white square. So the 31 dominos can only cover
+a total of 31 black and 31 white squares. Thus, it is impossible to cover the entire board using 31 dominos.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.4 Ants on a Triangle:
+There are three ants on different vertices of a triangle. What is the probability of collision 
+(between any two or all of them) if they start walking on the sides of the triangle? Assume that each ant 
+randomly picks a direction, with either direction being equally likely to be chosen, and that they walk at 
+the same speed. Similarly, find the probability of collision with n ants on an n-vertex polygon.
+
+---------------------------------------------------
+Solution:
+
+Let's assume that the first ant starts moving on one side in one particular direction. To avoid 
+collision, the other two ants can only select one particular direction. The probability of making this
+choice, given two random choices available is 50%.
+
+Thus, 
+    probability of avoiding a collision = 0.5 * 0.5 = 0.25
+which means
+    probability of collision = 1 - 0.25 = 0.75 
+    OR 75%
+
+------------------------
+As a general rule, we can see that:
+
+    probability of avoiding a collision = (0.5) ^ (n-1)
+which means
+    probability of collision = 1 - ((0.5) ^ (n-1))
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+6.5 Jugs of Water:
+You have a five-quart jug, a three-quart jug, and an unlimited supply of water (but no measuring cups). How would 
+you come up with exactly for quarts of water? Note that the jugs are oddly shaped, such that filling up exactly 
+"half" of the jug would be impossible. 
+
+---------------------------------------------------
+Solution:
