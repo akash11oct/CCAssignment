@@ -1,0 +1,18 @@
+6.1 The Heavy Pill:
+You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills of weight 1.1 gram. Given a scale that provides an exact measurement, how would you find the heavy bottle? you can only use the scale once.
+
+Solution:
+
+Here, we can use the scale just once. Since, one of the bottles has pills that are heavier than others, we take an increasing number of pills from each bottle. We identify the bottle with heavier pills according to the contribution of weight to total weight.
+
+1. Mark all bottles with numbers - 1..20 
+2. Take 1 pill from bottle #1, 2 pills from bottle #2 and so on.
+3. If all pills were one gram each, the total weight of pills would be - 1+2+3..20 = 20 * 21 / 2 = 210 grams
+4. We know any addition to the 210 grams comes from the bottle with heavy pills.
+5. For e.g. if bottle #20 was the one with heavy pills, actual weight would be -- 210 + 20 pills * 0.1 gram extra weight per pill = 212
+5. So, to identify the bottle with heavier pills, we use the formula : (weight - 210) / 0.1
+
+6.2 Basketball:
+You have a basketball hoop and someone says that you can play one of two games.
+Game 1: You get one shot to make the hoop.
+Game 2: You get three shots and you have to make two of three shots, If p is the probability of making a particular shot, for which values of p should you pick one game or the other? 
